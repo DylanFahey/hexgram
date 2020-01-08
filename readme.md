@@ -12,6 +12,9 @@ If possible I want to learn a bit about these things:
 * Chat Bots
 * AWS, especially S3
 
+I'm trying to use the design standards set forth in PEP8
+https://www.python.org/dev/peps/pep-0008/
+
 ## Project Goal
 Create a twitch plays word find game called HEXGRAM (https://www.nytimes.com/puzzles/spelling-bee)
 
