@@ -32,13 +32,17 @@ Longer words earn 1 point per letter.
 Each puzzle includes at least one word which uses every letter.   These are worth 7 extra points!  
 
 ## To-Do  
-Generate letters  
+~~Generate letters~~  
 Choose dicionary (SOWPODS or Scrabble?)  
 -- remove obscure words, hyphenated word, words <4 characters, proper nouns
-Generate list of words for game from Dictionary (regex)  
+~~Generate list of words for game from Dictionary (regex)~~  
 make sure there is at least 1 fullanagram(hexgram) (word that uses every letter)  
 Add interactivity via chat bot (IRC?)  
 Create stream/display  
+check both cases
+create game display  
+Choose a better dictionary  
+Create docker container  
 
 ## Dictionaries
 Dictionaries were created using certain lists and cat|grep  

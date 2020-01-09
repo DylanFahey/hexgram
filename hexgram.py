@@ -56,7 +56,7 @@ class GeneratePuzzle():
     PATTERN_FILE = "puzzlepattern.txt"
 
     regex_pattern = "^[" + center_letter + outside_letters + "]*+[" + center_letter + "]+[" + center_letter + outside_letters + "]*$"
-    print (regex_pattern)
+    # print (regex_pattern)
 
     #TODO write to PATTERN_FILE and use fgrep
 
@@ -84,8 +84,8 @@ class GeneratePuzzle():
 
     game_list = set(word_list)
     #TODO check if len(game_list) = 0 and regen if too short
-    print(game_list)
-    print(len(game_list))
+    # print(game_list)
+    # print(len(game_list))
 
 # Generate a puzzle of a certain length
 game_list = set()
