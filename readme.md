@@ -1,5 +1,5 @@
-# markhyperdimensionallynext
-markhyperdimenonallynext is a project that I am creating in order to derust my programming skills for a technical interview
+# hexgram
+hexgram is a project that I am creating in order to derust my programming skills for a technical interview
 
 ## Meta-Goals
 I want to practice/derust the following:

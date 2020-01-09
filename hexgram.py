@@ -14,7 +14,7 @@ import os
 import sys
 import random
 
-alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+ALPHABET = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 '''
 generate
@@ -31,7 +31,7 @@ It may be a good idea to weight them in the future
 random.choices uses replacement
 random.sample makes sure letters don't repeat
 '''
-letters = random.sample(list(alphabet),k=7)
+letters = random.sample(list(ALPHABET),k=7)
 
 # get the letter in the center
 center_letter = letters[0]
