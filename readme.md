@@ -51,6 +51,11 @@ Google 10k words (8906 post-processing)
 https://github.com/first20hours/google-10000-english
 https://github.com/zeisler/scrabble/blob/master/db/dictionary.csv
 
+## Things to track
+Whether a word has been guessed
+Whether a word has been found
+list of valid words
+
 ## Bonus Features
 Custom dictionaries?
 * Common passwords
@@ -58,3 +63,11 @@ Custom dictionaries?
 * urban dictionary words of the day
 * SOWPODS
 * Common words
+
+## Special Thanks
+drex23
+LukusAurelius
+Gscookie
+badacktor
+ArcticRevrus
+landogz
