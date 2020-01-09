@@ -14,12 +14,14 @@ import os
 import sys
 import random
 
-ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', /
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 '''
 generate
 chooses 7 unique letters and then chooses 1 letter to be the center
-create word list from dictionary of words which contain center letter and which are constructed exclusively of letters in puzzle
+create word list from dictionary of words which contain center letter
+and which are constructed exclusively of letters in puzzle
 rules for generation:
 must include at least 1 vowel (not actually necessary)
 '''
@@ -50,20 +52,24 @@ class GeneratePuzzle():
     '''
     Find all strings that contain letters, with center showing up at least once
 
-    Beginning of line + any number of repetitions of letters + one of center letter + any number of repetitions of letters + end of lined
+    Beginning of line + any number of repetitions of letters
+        + one of center letter + any number of repetitions of letters
+        + end of lined
 
     '''
     DICTIONARY_PATH = "dictionaries/google10k.txt"
     CURRENT_GAME_DICT = "dictionaries/currentgame.txt"
     PATTERN_FILE = "puzzlepattern.txt"
 
-    regex_pattern = "^[" + center_letter + outside_letters + "]*+[" + center_letter + "]+[" + center_letter + outside_letters + "]*$"
+    regex_pattern = "^[" + center_letter + outside_letters + "]*+[" \
+        + center_letter + "]+[" + center_letter + outside_letters + "]*$"
     # print (regex_pattern)
 
     # TODO write to PATTERN_FILE and use fgrep
 
     # create and run grep to make dictionary for current game
-    grep_command = "cat " + DICTIONARY_PATH + "| egrep '" + regex_pattern + "' > " + CURRENT_GAME_DICT
+    grep_command = "cat " + DICTIONARY_PATH + "| egrep '" + regex_pattern \
+        + "' > " + CURRENT_GAME_DICT
 
     # run bash command
     os.system(grep_command)
