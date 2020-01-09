@@ -52,6 +52,7 @@ Beginning of line + any number of repetitions of letters + one of center letter 
 
 '''
 DICTIONARY_PATH = "dictionaries/google10k.txt"
+CURRENT_GAME_DICT = "dictionaries/currentgame.txt"
 PATTERN_FILE = "puzzlepattern.txt"
 
 regex_pattern = "^[" + center_letter + outside_letters + "]*+[" + center_letter + "]+[" + center_letter + outside_letters + "]*$"
@@ -59,15 +60,51 @@ print (regex_pattern)
 
 #TODO write to PATTERN_FILE and use fgrep
 
-#grep_command = "cat " + DICTIONARY_PATH +
+# create and run grep to make dictionary for current game
+grep_command = "cat " + DICTIONARY_PATH + "| egrep '" + regex_pattern + "' > " + CURRENT_GAME_DICT
 
-# Find words that contain center letters
+# run bash command
+os.system(grep_command)
 
+# mi amigos a mi escuela me llama 'pinche gringo'
 
-# Exclude words that contain letters not in puzzle letters
+# create text stream and read from game dict
+# with open(CURRENT_GAME_DICT,mode='r') as f:
+#     game_dict = f.readlines()
 
 '''
-check
-checks validity of puzzle
-
+Create 3 sets:
++ Words in game list
++ Words that have been guessed
++ Words that have been guessed correctly
 '''
+
+word_list = [line.rstrip('\n') for line in open(CURRENT_GAME_DICT)]
+
+game_list = set(word_list)
+correct_list = set()
+guess_list = set()
+#TODO check if len(game_list) = 0 and regen if too short
+print(game_list)
+print(len(game_list))
+
+#run while there are words that haven't been found
+while len(game_list) > 0:
+    guess = input("guess a word: ")
+    if guess in guess_list:
+        print (guess + " has already been guessed")
+    else:
+        guess_list.add(guess)
+        if guess in game_list:
+            print (guess + " is a word!")
+            game_list.remove(guess)
+        else:
+            #TODO point out what is wrong:
+            # not in Dictionary
+            # must have at least 4 Letters
+            # must contain $center_letter
+            # $letter is not in list
+            print (guess + " is not a correct answer")
+print ("game over, you won!")
+#TODO Check validity of puzzle
+#TODO Check for at least on pangram
